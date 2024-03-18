@@ -3,7 +3,7 @@
 if defined?(Digest) &&
     /\A(?:2\.|3\.0\.[0-2]\z)/.match?(RUBY_VERSION) &&
     caller_locations.any? { |l|
-      %r{/(rubygems/gem_runner|bundler/cli)\.rb}.match?(l.path)
+      %r{/(rubygems/gem_runner|bundler/cli|bundler/runtime)\.rb}.match?(l.path)
     }
   # Before Ruby 3.0.3/3.1.0, the gem and bundle commands used to load
   # the digest library before loading additionally installed gems, so
